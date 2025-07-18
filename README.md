@@ -53,15 +53,25 @@ pip install -r requirements.txt
 ### 4.Configure PostgreSQL Database
 
 Upgrade your settings.py
+
 DATABASES = {
+
     'default': {
+    
         'ENGINE': 'django.db.backends.postgresql',
+        
         'NAME': 'database_name',
+        
         'USER': 'your_username',
+        
         'PASSWORD': 'your_password',
+        
         'HOST': 'localhost',
+        
         'PORT': '5432',
+        
     }
+    
 }
 
 ### 5.Run Migrations

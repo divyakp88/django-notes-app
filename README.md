@@ -38,18 +38,18 @@ Follow these steps to run the project locally
 ```bash
 git clone http://github.com/divyakp88/django-notes-app.git
 cd django-notes-app
-
+```
 ### 2. Create Virtual Environment
 
 ```bash
 pip install virtualenvwrapper-win
 mkvirtualenv test
-
+```
 ### 3.Install requirements
 
 ```bash
 pip install -r requirements.txt
-
+```
 ### 4.Configure PostgreSQL Database
 
 Upgrade your settings.py
@@ -69,13 +69,11 @@ DATABASES = {
 ```bash
 python manage.py makemigrations
 python manage.py migrate
-
+```
 ### 6.Run the Development Server
 
 ```bash
 python manage.py runserver
-
+```
 Visit http://127.0.0.1:8000/ to use the Notes App.
 
-2.Run 'pip install -r requirements.txt'
-3.Run the server : 'python manage.py runserver'

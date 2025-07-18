@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{% static 'paper_img/notes.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: #333;
+        }
+        .auth-links a {
+            display: inline-block;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .auth-links a:hover {
+            color: #007BFF;
+        }
+        p{
+            
+            font-size: medium;
+            color: rgb(11, 6, 36);
+        }
+        .content-box {
+            max-width: 500px;
+            margin: 60px auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .content-box input,
+        .content-box textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .content-box button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .content-box button:hover {
+            background-color: #45a049;
+        }
+
+        .content-box a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1em;
+        }
+
+        .content-box a:hover {
+            color: #007BFF;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <center>
+        
+    
+    <h2>Create New Note</h2>&nbsp;&nbsp;&nbsp;
+    <a style="text-decoration-color: #007BFF; font-size: medium;" href="{% url 'logout' %}">Logout</a>
+    </center>
+    <div class="content-box">
+    <form action="note_create" method="POST">
+        {% csrf_token %}
+        <label>Title   :</label>
+        <input type="text" name="title"><br><br>
+        <label>Description :</label>
+        <textarea rows="5" name="desc"></textarea><br><br><br><br>
+        <button type="submit">SAVE</button>
+    </form>
+     
+    <p><a href="{% url 'note_list' %}">Back To notes List</p>
+    </div>
+</body>
+</html>

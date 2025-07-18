@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+            background-color: rgb(4, 217, 146);
+        }
+        .auth-links a {
+            display: inline-block;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .auth-links a:hover {
+            color: #007BFF;
+        }
+        p{
+            
+            font-size: medium;
+            color: rgb(11, 6, 36);
+        }
+
+    </style>
+    
+        
+</head>
+<body>
+    <h1><center> Welcome To Notes App</center></h1>
+    {% if user.is_authenticated %}
+        <p>Hello {{user.first_name}}</p><br><br>
+        <a href="{% url 'logout' %}"><h3>Logout</h3></a><br><br>
+        <a href="{% url 'note_list' %}"><h3>View Notes</h3></a>
+
+    {% else %}
+        <a href="{% url 'login' %}"><h3>Login</h3></a>&nbsp;&nbsp;
+        <a href="{% url 'register' %}"><h3>Register</h3></a>
+    {% endif %}
+    
+</body>
+</html>

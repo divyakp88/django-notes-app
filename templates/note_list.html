@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of NOtes</title>
+   <style>
+    body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+            background-image: url("{% static 'paper_img/notes.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+        .auth-links a {
+            display: inline-block;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    th, td {
+        padding: 12px;
+        border: 1px solid #333;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+
+    a {
+        color: #007BFF;
+        text-decoration:underline;
+        text-shadow: #007BFF;
+        size: 0cqmax;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+   </style>
+</head>
+<body>
+    <h1>My Notes</h1>
+    <div class="auth-links"></div>
+        <a href="{% url 'logout' %}">Logout</a>
+        <br><br><br><br>
+    </div>
+    {% if notev %}
+    <table border="1" align="center">
+        <thead>
+            <tr>
+                <th>Serial No.</th>
+                <th>Title      </th>
+                <th>Description</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for note in notev %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{note.title}}</td>
+                <td style="width: 250px;">{{note.desc}}</td>
+                <td>{{note.created_at}}</td>
+                <td><a href="{% url 'note_update' note.pk %}">Edit</a></td>
+                <td>
+                    <form action="{% url 'note_delete' note.pk %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" onclick="return confirm('Are you sure you want to delete this note')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    <br><br>
+    <a href="{% url 'note_create' %}">Create New List</a><br><br>
+    <a href="{% url 'index' %}">Back to home page</a>
+
+    {% else %}
+    <p>No notes available</p><br><br>
+    <a href="{% url 'note_create' %}">Create New List</a><br><br>
+    <a href="{% url 'index' %}">Back to home page</a>
+
+    {% endif %}
+    
+</body>
+</html>

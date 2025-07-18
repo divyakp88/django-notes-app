@@ -19,9 +19,13 @@ Includes user authentication and a clean UI with background images.
 ## Tech Stack
 
 -Python
+
 -Django
+
 -HTML/CSS
+
 -PostgreSQL
+
 
 ---
 
@@ -35,7 +39,7 @@ Follow these steps to run the project locally
 git clone http://github.com/divyakp88/django-notes-app.git
 cd django-notes-app
 
-### 2.Create Virtual Environment
+### 2. Create Virtual Environment
 
 ```bash
 pip install virtualenvwrapper-win

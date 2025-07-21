@@ -77,16 +77,7 @@ WSGI_APPLICATION = 'noteapp.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        #'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': 'notesapp_db_ov3o',
-        #'USER': 'notesapp_db_ov3o_user',
-        #'PASSWORD': 'ysgTqcrrp7ddj6rN61yfcaZZme1w8fWk',
-        #'HOST': 'dpg-d1uv6jemcj7s73esveag-a',
-        #'PORT':'5432'
-        dj_database_url.config(default=os.environ['DATABASE_URL'])
-
-    }
+    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
 }
 
 

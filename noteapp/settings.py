@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-jtfs)6y1=j680(i66c8qgje=%1fakokld5+f5_($#y58sb2m8u')
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -77,11 +78,13 @@ WSGI_APPLICATION = 'noteapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'note',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost'
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'notesapp_db_ov3o',
+        #'USER': 'notesapp_db_ov3o_user',
+        #'PASSWORD': 'ysgTqcrrp7ddj6rN61yfcaZZme1w8fWk',
+        #'HOST': 'dpg-d1uv6jemcj7s73esveag-a',
+        #'PORT':'5432'
+        dj_database_url.config(default=os.environ['DATABASE_URL'])
 
     }
 }

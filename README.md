@@ -1,7 +1,7 @@
 # django-notes-app
-Simple Notes App using  Django
+
 A simple Notes App built with Django that lets users add, edit, and delete notes.
-Includes user authentication and a clean UI with background images.
+Includes user authentication, Password Reset feature and a clean UI with background images.
 
 ---
 
@@ -10,11 +10,53 @@ Includes user authentication and a clean UI with background images.
 - Create new notes  
 - Update existing notes  
 - Delete notes  
-- User authentication (register, login, logout)  
+- User authentication (register, login, logout)
+- Password Reset feature
 - Clean UI with HTML/CSS and background images  
 - PostgreSQL database support
 
 ---
+
+## 🖼️ Screenshots
+
+### 🏠 Main Dashboard
+
+![Dash board](noteapp/static/paper_img/Screenshotmain.png)
+
+### 🔐 Login Page
+
+![Login Screenshot](noteapp/static/paper_img/Screenshotlogin.png)
+
+### 🔑 Forgot Password 
+
+![Forgot Password](noteapp/static/paper_img/Screenshotforgot.png)
+
+### 📧 Password Reset Link Page
+
+![Password Reset Link](noteapp/static/paper_img/Screenshotresetlink.png)
+
+### 🔑 Password Reset Form
+
+![Password Reset Form](noteapp/static/paper_img/Screenshotset_pass.png)
+
+### 📝 Note List Page
+
+![List of Notes](noteapp/static/paper_img/Screenshot_note_list.png)
+
+### ✏️ Update Note Form
+
+![Update Notes](noteapp/static/paper_img/Screenshot_edit_note.png)
+
+
+### ➕ Create New Note Form
+
+![Update Notes](noteapp/static/paper_img/Screenshot_create_new_note.png)
+
+
+
+
+
+
 
 ## Tech Stack
 
@@ -86,4 +128,12 @@ python manage.py migrate
 python manage.py runserver
 ```
 Visit http://127.0.0.1:8000/ to use the Notes App.
+
+🙋‍♀️ **Author**
+
+  Divya Anoop
+  
+  Python | Django Developer
+  
+  🌍 Based in India
 

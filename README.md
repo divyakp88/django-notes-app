@@ -68,6 +68,8 @@ Includes user authentication, Password Reset feature and a clean UI with backgro
 
 -PostgreSQL
 
+-SMTP Email Backend
+
 
 ---
 

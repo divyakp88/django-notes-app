@@ -11,7 +11,7 @@ Includes user authentication, Password Reset feature and a clean UI with backgro
 - Update existing notes  
 - Delete notes  
 - User authentication (register, login, logout)
-- Password Reset feature
+- Email-based password reset using secure token URLs
 - Clean UI with HTML/CSS and background images  
 - PostgreSQL database support
 

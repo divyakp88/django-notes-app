@@ -2,6 +2,15 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib import messages
+from django.contrib.auth.views import PasswordResetView
+from django.conf import settings
+
+class CustomPasswordResetView(PasswordResetView):
+    def get_email_context(self,*args,**kwargs):
+        context=super().get_email_context(*args,**kwargs)
+        context["domain"]=settings.DOMAIN
+        context["protocol"]=settings.PROTOCOL
+        return context
 
 def login(request):
     if request.method=='POST':
